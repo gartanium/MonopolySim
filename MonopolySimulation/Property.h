@@ -24,7 +24,6 @@ class Property
 		int rentNoHouses;
 		std::string color;
 		std::string title;
-
 		bool inMonopoly;
 };
 

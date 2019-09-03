@@ -28,12 +28,17 @@ int Property::GetCurrentRent()
 
 void Property::BuildHouse()
 {
-	if (houseCount < 5)
+	if (inMonopoly)
 	{
-		houseCount++;
+		if (houseCount < 5)
+		{
+			houseCount++;
+		}
+		else
+			throw "ERROR: There are to many houses!";
 	}
 	else
-		throw "ERROR: There are to many houses!";
+		throw "ERROR: Property not in a monopoly!";
 }
 
 void Property::SellHouse()

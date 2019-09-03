@@ -73,6 +73,7 @@ TEST(PROPERTYTESTS, TestHasHotel) {
 		6, 30, 90, 270, 400, 550
 	};
 	Property testObject(50, priceArray, "Oriental Ave");
+	testObject.SetMonopolyStatus(true);
 	
 	for (int i = 0; i < 5; i++)
 	{
@@ -88,6 +89,7 @@ TEST(PROPERTYTESTS, TestOnlyFiveHouses)
 		6, 30, 90, 270, 400, 550
 	};
 	Property testObject(50, priceArray, "Oriental Ave");
+	testObject.SetMonopolyStatus(true);
 
 	try {
 		for (int i = 0; i < 5; i++)
@@ -127,3 +129,22 @@ TEST(PROPERTYTESTS, TestNoHousesToSell)
 	}
 }
 
+TEST(PROPERTYTESTS, TestBuildIfInMonopoly)
+{
+	int priceArray[6] = {
+		6, 30, 90, 270, 400, 550
+	};
+	Property testObject(50, priceArray, "Oriental Ave");
+
+	try {
+		testObject.BuildHouse();
+		FAIL() << "Expected Must Be In Monopoly Error.";
+	}
+	catch (const char* msg) {
+		std::string result(msg);
+		EXPECT_EQ(result, "ERROR: Property not in a monopoly!");
+	}
+	catch (...) {
+		FAIL() << "Expected Must Be In Monopoly Error.";
+	}
+}
