@@ -2,16 +2,9 @@
 //
 
 #include <iostream>
-#include "..//MonopolySimulation/Game.h"
 
 int main()
 {
-	Game game;
-
-	while (!game.End())
-	{
-		std::cout << "HELLO WORLD!";
-	}
 }
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu

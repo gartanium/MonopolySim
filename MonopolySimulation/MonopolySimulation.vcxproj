@@ -124,15 +124,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Blue.cpp" />
+    <ClCompile Include="Board.cpp" />
     <ClCompile Include="Client.cpp" />
     <ClCompile Include="ClientConnection.cpp" />
     <ClCompile Include="DiceHandler.cpp" />
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="GameData.cpp" />
     <ClCompile Include="Monopoly.cpp" />
     <ClCompile Include="PlayerData.cpp" />
     <ClCompile Include="Property.cpp" />
     <ClCompile Include="PropertyCollection.cpp" />
     <ClCompile Include="Server.cpp" />
+    <ClCompile Include="Tile.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Board.h" />
@@ -140,11 +143,13 @@
     <ClInclude Include="ClientConnection.h" />
     <ClInclude Include="DiceHandler.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameData.h" />
     <ClInclude Include="Monopoly.h" />
     <ClInclude Include="PlayerData.h" />
     <ClInclude Include="Property.h" />
     <ClInclude Include="PropertyCollection.h" />
     <ClInclude Include="Server.h" />
+    <ClInclude Include="Tile.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

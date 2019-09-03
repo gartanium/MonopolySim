@@ -11,5 +11,6 @@
     <TestDuration Test="PROPERTYTESTS.TestOnlyFiveHouses" Duration="1" />
     <TestDuration Test="PROPERTYTESTS.TestNoHousesToSell" Duration="1" />
     <TestDuration Test="PROPERTYTESTS.TestBuildIfInMonopoly" Duration="1" />
+    <TestDuration Test="GAMEDATATESTS.TestPlayerPositions" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

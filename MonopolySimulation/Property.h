@@ -1,6 +1,7 @@
 #pragma once
 #include <string>
-class Property
+#include "Tile.h"
+class Property : public Tile
 {
 	public:
 		Property(int morgagePrice,  int housePriceArray[6], std::string title);

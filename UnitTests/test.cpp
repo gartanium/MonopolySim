@@ -3,6 +3,7 @@
 #include "../MonopolySimulation/PlayerData.h"
 #include "../MonopolySimulation/Property.h"
 #include "test.h"
+#include "../MonopolySimulation/GameData.h"
 
 TEST(GAMETESTS, TestRollDie) {
 	DiceHandler testObj(3);
@@ -148,3 +149,21 @@ TEST(PROPERTYTESTS, TestBuildIfInMonopoly)
 		FAIL() << "Expected Must Be In Monopoly Error.";
 	}
 }
+
+// Game tests
+
+// GameData tests
+TEST(GAMEDATATESTS, TestPlayerPositions)
+{
+	GameData testObject;
+	testObject.AddPlayerPosition(10);
+	testObject.AddPlayerPosition(20);
+	testObject.AddPlayerPosition(30);
+	testObject.AddPlayerPosition(3);
+
+	std::string expected = "PlayerPositions: [10, 20, 30, 3, ]";
+	std::string actual = testObject.ToJson();
+
+	EXPECT_EQ(expected, actual);
+}
+
