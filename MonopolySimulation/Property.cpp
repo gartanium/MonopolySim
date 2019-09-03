@@ -28,10 +28,20 @@ int Property::GetCurrentRent()
 
 void Property::BuildHouse()
 {
-	houseCount++;
+	if (houseCount < 5)
+	{
+		houseCount++;
+	}
+	else
+		throw "ERROR: There are to many houses!";
 }
 
 void Property::SellHouse()
 {
-	houseCount--;
+	if (houseCount > 0)
+	{
+		houseCount--;
+	}
+	else
+		throw "ERROR: There are no houses to sell!";
 }

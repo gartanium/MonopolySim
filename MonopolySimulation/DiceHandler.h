@@ -5,6 +5,7 @@
 class DiceHandler
 {
 	public:
+		DiceHandler() { srand(time(NULL)); }
 		DiceHandler(int seed);
 		int RollDice();
 		bool GetIsDouble() { return isDouble; }

@@ -4,7 +4,9 @@
 class Game
 {
 	public: 
+		Game() { endGame = false; }
 		void Update();
+		bool End() { return endGame; }
 
 	private:
 		void Build();
@@ -12,5 +14,6 @@ class Game
 		void Move();
 		void HandleMovementResult();
 		DiceHandler diceHandler;
+		bool endGame;
 };
 

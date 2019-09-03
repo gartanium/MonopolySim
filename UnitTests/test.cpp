@@ -81,3 +81,49 @@ TEST(PROPERTYTESTS, TestHasHotel) {
 	}
 	ASSERT_TRUE(testObject.HasHotel());
 }
+
+TEST(PROPERTYTESTS, TestOnlyFiveHouses)
+{
+	int priceArray[6] = {
+		6, 30, 90, 270, 400, 550
+	};
+	Property testObject(50, priceArray, "Oriental Ave");
+
+	try {
+		for (int i = 0; i < 5; i++)
+		{
+			testObject.BuildHouse();
+		}
+
+		testObject.BuildHouse();
+		FAIL() << "Expected To Many Houses Error.";
+	}
+	catch (const char* msg) {
+		std::string result(msg);
+		EXPECT_EQ(result, "ERROR: There are to many houses!");
+	}
+	catch (...) {
+		FAIL() << "Expected To Many Houses Error.";
+	}
+}
+
+TEST(PROPERTYTESTS, TestNoHousesToSell)
+{
+	int priceArray[6] = {
+		6, 30, 90, 270, 400, 550
+	};
+	Property testObject(50, priceArray, "Oriental Ave");
+
+	try {
+		testObject.SellHouse();
+		FAIL() << "Expected No Houses To Sell Error.";
+	}
+	catch (const char* msg) {
+		std::string result(msg);
+		EXPECT_EQ(result, "ERROR: There are no houses to sell!");
+	}
+	catch (...) {
+		FAIL() << "Expected No Houses To Sell Error.";
+	}
+}
+

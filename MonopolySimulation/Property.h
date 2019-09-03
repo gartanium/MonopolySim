@@ -13,7 +13,6 @@ class Property
 		void SetMonopolyStatus(bool value) { inMonopoly = value; }
 		void BuildHouse();
 		void SellHouse();
-
 		bool HasHotel() { return houseCount == 5; }
 
 
