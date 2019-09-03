@@ -26,7 +26,7 @@
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
@@ -123,6 +123,28 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Blue.cpp" />
+    <ClCompile Include="Client.cpp" />
+    <ClCompile Include="ClientConnection.cpp" />
+    <ClCompile Include="DiceHandler.cpp" />
+    <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Monopoly.cpp" />
+    <ClCompile Include="PlayerData.cpp" />
+    <ClCompile Include="Property.cpp" />
+    <ClCompile Include="PropertyCollection.cpp" />
+    <ClCompile Include="Server.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Board.h" />
+    <ClInclude Include="Client.h" />
+    <ClInclude Include="ClientConnection.h" />
+    <ClInclude Include="DiceHandler.h" />
+    <ClInclude Include="Game.h" />
+    <ClInclude Include="Monopoly.h" />
+    <ClInclude Include="PlayerData.h" />
+    <ClInclude Include="Property.h" />
+    <ClInclude Include="PropertyCollection.h" />
+    <ClInclude Include="Server.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

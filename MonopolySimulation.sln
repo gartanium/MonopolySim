@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.29102.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MonopolySimulation", "MonopolySimulation\MonopolySimulation.vcxproj", "{651B3980-26FF-4085-8FD5-8D960302BA15}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "UnitTests", "UnitTests\UnitTests.vcxproj", "{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -21,6 +23,14 @@ Global
 		{651B3980-26FF-4085-8FD5-8D960302BA15}.Release|x64.Build.0 = Release|x64
 		{651B3980-26FF-4085-8FD5-8D960302BA15}.Release|x86.ActiveCfg = Release|Win32
 		{651B3980-26FF-4085-8FD5-8D960302BA15}.Release|x86.Build.0 = Release|Win32
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Debug|x64.ActiveCfg = Debug|x64
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Debug|x64.Build.0 = Debug|x64
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Debug|x86.ActiveCfg = Debug|Win32
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Debug|x86.Build.0 = Debug|Win32
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Release|x64.ActiveCfg = Release|x64
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Release|x64.Build.0 = Release|x64
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Release|x86.ActiveCfg = Release|Win32
+		{63F1CC1D-C6BC-4FD8-AB78-53763DD52F4F}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

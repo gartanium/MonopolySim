@@ -1,0 +1,5 @@
+﻿  pch.cpp
+  test.cpp
+C:\Users\Matt\source\repos\MonopolySimulation\MonopolySimulation\Game.h(9,14): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+test.obj : error LNK2019: unresolved external symbol "public: int __thiscall Game::RollDie(void)" (?RollDie@Game@@QAEHXZ) referenced in function "private: virtual void __thiscall GAMETESTS_RollDie_Test::TestBody(void)" (?TestBody@GAMETESTS_RollDie_Test@@EAEXXZ)
+C:\Users\Matt\source\repos\MonopolySimulation\Debug\UnitTest.exe : fatal error LNK1120: 1 unresolved externals
