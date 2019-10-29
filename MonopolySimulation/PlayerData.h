@@ -15,7 +15,9 @@ class PlayerData
 		int * GetMorgaged();
 		int * GetCash();
 		int * GetSpecialCards();
-		int * GetTimeInJail();
+		int GetTimeInJail();
+		bool IsInJail();
+
 	
 		int SpendCash(int value);
 		int ReceiveCash(int value);
@@ -23,6 +25,8 @@ class PlayerData
 		bool IsBankrupt();
 
 		void ReceiveProperty(Property);
+		void sendToJail();
+		void AddTimeInJail();
 
 		// Turns the player data and turns it into a json object.
 		std::string Serialize();
@@ -31,5 +35,7 @@ class PlayerData
 
 	private:
 		int position;
+		bool isInJail = false;
+		int jailTime = 0;
 };
 

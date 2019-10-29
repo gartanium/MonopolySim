@@ -56,6 +56,33 @@ TEST(PLAYERDATATESTS, TestMovePlayer) {
 	}
 }
 
+TEST(PLAYERDATATESTS, Test3TurnsInJail) {
+	PlayerData testObject;
+	testObject.Move(10);
+	int actual = testObject.GetPosition();
+	int expected = 10;
+	
+	ASSERT_EQ(expected, actual);
+
+	testObject.sendToJail();
+	
+	testObject.Move(3);
+	ASSERT_EQ(expected, actual);
+	ASSERT_EQ(1, testObject.GetTimeInJail());
+
+	testObject.Move(3);
+	ASSERT_EQ(expected, actual);
+	ASSERT_EQ(2, testObject.GetTimeInJail());
+	
+	testObject.Move(3);
+	expected = 13;
+	actual = testObject.GetPosition();
+	ASSERT_EQ(expected, actual);
+	ASSERT_EQ(0, testObject.GetTimeInJail());
+
+
+}
+
 // Property Tests
 TEST(PROPERTYTESTS, TestGetCurrentRent) {
 	int actual[7];

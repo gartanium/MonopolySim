@@ -1,3 +1,2 @@
-﻿  GameData.cpp
-C:\Users\Matt\source\repos\MonopolySimulation\MonopolySimulation\GameData.cpp(6,20): warning C4018:  '<': signed/unsigned mismatch
-  MonopolySimulation.vcxproj -> C:\Users\Matt\source\repos\MonopolySimulation\Debug\MonopolySimulation.lib
+﻿  PlayerData.cpp
+  MonopolySimulation.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\MonopolySimulation.lib

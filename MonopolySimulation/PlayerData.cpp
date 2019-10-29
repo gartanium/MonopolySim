@@ -25,9 +25,17 @@ int* PlayerData::GetSpecialCards()
 	return nullptr;
 }
 
-int* PlayerData::GetTimeInJail()
+/*
+	Returns how long the player has been in jail so the server knows when they need to pay to get out
+*/
+int PlayerData::GetTimeInJail()
 {
-	return nullptr;
+	return jailTime;
+}
+
+bool PlayerData::IsInJail()
+{
+	return isInJail;
 }
 
 int PlayerData::SpendCash(int value)
@@ -49,6 +57,33 @@ void PlayerData::ReceiveProperty(Property)
 {
 }
 
+void PlayerData::sendToJail()
+{
+	isInJail = true;
+}
+
+/*
+	adds time to the player being in jail if the plyaer is already in jail
+	the player no longer becomes in jail if three turns has passed/on the third turn the player
+	is released from jail
+*/
+void PlayerData::AddTimeInJail()
+{
+	if (isInJail)
+	{
+		jailTime++;
+		if (jailTime == 3)
+		{
+			isInJail = false;
+			jailTime = 0;
+			//this is probably where money should be subtracted for getting out of jail
+
+		}
+
+	}
+	
+}
+
 std::string PlayerData::Serialize()
 {
 	return std::string();
@@ -56,5 +91,12 @@ std::string PlayerData::Serialize()
 
 void PlayerData::Move(int value)
 {
-	position += value;
+	
+	AddTimeInJail();
+	if (!isInJail)
+	{
+		position += value;
+	}
+	
+	
 }
