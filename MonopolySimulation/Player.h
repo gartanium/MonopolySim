@@ -1,33 +1,29 @@
 
 
 #pragma once
+#include "PlayerData.h"
 /*
  * The Player class contains all the information pertaining to a
  * Monopoly Player. It also contains functionality for manipulating
  * the Player.
  */
-class PlayerData
+class Player
 {
 	public:
-		int * GetPosition();
-		int * GetUnmorgaged();
-		int * GetMorgaged();
-		int * GetCash();
-		int * GetSpecialCards();
-		int * GetTimeInJail();
-	
-		int SpendCash(int value);
-		int ReceiveCash(int value);
-
-		bool IsBankrupt();
-
-		void ReceiveProperty();
+		
+		void ReceiveProperty(Property);
+		void sendToJail();
+		void AddTimeInJail(bool doubles);
+		void Move(int value, bool doubles);
+		void PayBail(int bail);
+		int GetPosition() { return playerData.GetPosition(); };
+		int GetTimeInJail() { return playerData.getJailTime(); };
 
 
 	private:
-		int position[2];
-		Property
+		PlayerData playerData;
 		
 
 };
+
 

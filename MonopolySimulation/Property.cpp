@@ -1,6 +1,6 @@
 #include "Property.h"
 
-Property::Property(int morgagePrice, int housePriceArray[6], std::string title)
+Property::Property(int morgagePrice, int housePriceArray[6], std::string title, int purchasePrice)
 {
 	this->morgagePrice = morgagePrice;
 	this->rentNoHouses = housePriceArray[0];
@@ -12,6 +12,7 @@ Property::Property(int morgagePrice, int housePriceArray[6], std::string title)
 		this->houseRents[i - 1] = housePriceArray[i];
 	}
 	this->title = title;
+	this->cost = purchasePrice;
 }
 
 int Property::GetCurrentRent()

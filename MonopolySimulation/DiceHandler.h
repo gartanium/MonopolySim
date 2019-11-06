@@ -12,6 +12,6 @@ class DiceHandler
 
 	private:
 		int RollDie();
-		bool isDouble;
+		bool isDouble = false;
 };
 

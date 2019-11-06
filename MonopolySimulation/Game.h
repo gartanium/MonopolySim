@@ -1,7 +1,7 @@
 #pragma once
 #include "DiceHandler.h"
 #include <vector>
-#include "PlayerData.h"
+#include "Player.h"
 
 class Game
 {
@@ -15,10 +15,12 @@ class Game
 		void Trade();
 		void Move();
 		void HandleMovementResult();
+		void Sell();
+		void NextPlayer() { playerTurnIndex++; };
 		
 		DiceHandler diceHandler;
 		bool endGame;
-		std::vector<PlayerData> players;
+		std::vector<Player> players;
 		int playerTurnIndex;
 };
 

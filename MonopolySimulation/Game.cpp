@@ -6,7 +6,7 @@ Game::Game(int playerCount)
 	endGame = false;
 	for (int i = 0; i < playerCount; i++) 
 	{
-		PlayerData newPlayer;
+		Player newPlayer;
 		players.push_back(newPlayer);
 	}
 }
@@ -26,10 +26,15 @@ void Game::Trade()
 void Game::Move()
 {	
 	int diceRoll = diceHandler.RollDice();
-	players[playerTurnIndex].Move(diceRoll);
+	bool doubles = diceHandler.GetIsDouble();
+	players[playerTurnIndex].Move(diceRoll, doubles);
 }
 
 void Game::HandleMovementResult()
+{
+}
+
+void Game::Sell()
 {
 }
 

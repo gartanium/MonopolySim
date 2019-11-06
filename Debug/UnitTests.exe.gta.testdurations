@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GtaTestDurations xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Executable>C:\Users\Matt\source\repos\MonopolySimulation\Debug\UnitTests.exe</Executable>
+  <Executable>C:\Users\Ryan\Source\Repos\MonopolySim\Debug\UnitTests.exe</Executable>
   <TestDurations>
     <TestDuration Test="TestCaseName.TestName" Duration="1" />
     <TestDuration Test="GAMETESTS.TestRollDie" Duration="1" />
@@ -12,5 +12,6 @@
     <TestDuration Test="PROPERTYTESTS.TestNoHousesToSell" Duration="1" />
     <TestDuration Test="PROPERTYTESTS.TestBuildIfInMonopoly" Duration="1" />
     <TestDuration Test="GAMEDATATESTS.TestPlayerPositions" Duration="1" />
+    <TestDuration Test="PLAYERDATATESTS.Test3TurnsInJail" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

@@ -15,88 +15,52 @@ int* PlayerData::GetMorgaged()
 	return nullptr;
 }
 
-int* PlayerData::GetCash()
-{
-	return nullptr;
-}
+
 
 int* PlayerData::GetSpecialCards()
 {
 	return nullptr;
 }
 
-/*
-	Returns how long the player has been in jail so the server knows when they need to pay to get out
-*/
-int PlayerData::GetTimeInJail()
-{
-	return jailTime;
-}
 
-bool PlayerData::IsInJail()
-{
-	return isInJail;
-}
 
-int PlayerData::SpendCash(int value)
-{
-	return 0;
-}
-
-int PlayerData::ReceiveCash(int value)
-{
-	return 0;
-}
 
 bool PlayerData::IsBankrupt()
 {
-	return false;
-}
-
-void PlayerData::ReceiveProperty(Property)
-{
-}
-
-void PlayerData::sendToJail()
-{
-	isInJail = true;
-}
-
-/*
-	adds time to the player being in jail if the plyaer is already in jail
-	the player no longer becomes in jail if three turns has passed/on the third turn the player
-	is released from jail
-*/
-void PlayerData::AddTimeInJail()
-{
-	if (isInJail)
+	if (assets <= 0)
 	{
-		jailTime++;
-		if (jailTime == 3)
-		{
-			isInJail = false;
-			jailTime = 0;
-			//this is probably where money should be subtracted for getting out of jail
-
-		}
-
+		return true;
+	}
+	else
+	{
+		return false;
 	}
 	
 }
+
+/*
+	sets the status of the player to in jail or not in jail
+	if going to jail it also moves them to jail
+*/
+void PlayerData::setInJailStatus(bool isInJail)
+{
+	if (IsInJail)
+	{
+		this->isInJail = isInJail;
+		position = 10;
+	}
+	else
+	{
+		this->isInJail = isInJail;
+	}
+	
+}
+
+
 
 std::string PlayerData::Serialize()
 {
 	return std::string();
 }
 
-void PlayerData::Move(int value)
-{
-	
-	AddTimeInJail();
-	if (!isInJail)
-	{
-		position += value;
-	}
-	
-	
-}
+

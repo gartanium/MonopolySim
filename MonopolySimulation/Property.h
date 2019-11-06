@@ -4,12 +4,13 @@
 class Property : public Tile
 {
 	public:
-		Property(int morgagePrice,  int housePriceArray[6], std::string title);
+		Property(int morgagePrice,  int housePriceArray[6], std::string title, int purchasePrice);
 		int GetHouseCount() { return houseCount; }
 		int GetHousePrice() { return housePrice; }
 		int GetMorgagePrice() { return morgagePrice; }
 		std::string GetColor() { return color; }
 		int GetCurrentRent();
+		int GetCost() { return cost; };
 
 		void SetMonopolyStatus(bool value) { inMonopoly = value; }
 		void BuildHouse();
@@ -26,5 +27,6 @@ class Property : public Tile
 		std::string color;
 		std::string title;
 		bool inMonopoly;
+		int cost;
 };
 

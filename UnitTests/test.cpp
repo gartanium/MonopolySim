@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "../MonopolySimulation/DiceHandler.h"
 #include "../MonopolySimulation/PlayerData.h"
+#include "../MonopolySimulation/Player.h"
 #include "../MonopolySimulation/Property.h"
 #include "test.h"
 #include "../MonopolySimulation/GameData.h"
@@ -14,6 +15,9 @@ TEST(GAMETESTS, TestRollDie) {
 	EXPECT_TRUE(valid);
 }
 
+
+//Ryan: I'm not too sure how this works or what it really is doing?
+//		-how does this check for doubles?
 TEST(GAMETESTS, TestDoubles) {
 	DiceHandler testObj(3);
 	int result;
@@ -35,20 +39,20 @@ TEST(GAMETESTS, TestDoubles) {
 // Player Tests
 
 TEST(PLAYERDATATESTS, TestMovePlayer) {
-	PlayerData testObject;
+	Player testObject;
 	int actual[4];
 	int expected[4] = { 12, 24, 36, 0 };
 
-	testObject.Move(12);
+	testObject.Move(12, 0);
 	actual[0] = testObject.GetPosition();
 
-	testObject.Move(12);
+	testObject.Move(12, 0);
 	actual[1] = testObject.GetPosition();
 
-	testObject.Move(12);
+	testObject.Move(12, 0);
 	actual[2] = testObject.GetPosition();
 
-	testObject.Move(4);
+	testObject.Move(4 ,0);
 	actual[3] = testObject.GetPosition();
 	
 	for (int i = 0; i < 4; i++) {
@@ -57,8 +61,8 @@ TEST(PLAYERDATATESTS, TestMovePlayer) {
 }
 
 TEST(PLAYERDATATESTS, Test3TurnsInJail) {
-	PlayerData testObject;
-	testObject.Move(10);
+	Player testObject;
+	testObject.Move(10, 0);
 	int actual = testObject.GetPosition();
 	int expected = 10;
 	
@@ -66,15 +70,15 @@ TEST(PLAYERDATATESTS, Test3TurnsInJail) {
 
 	testObject.sendToJail();
 	
-	testObject.Move(3);
+	testObject.Move(3, 0);
 	ASSERT_EQ(expected, actual);
 	ASSERT_EQ(1, testObject.GetTimeInJail());
 
-	testObject.Move(3);
+	testObject.Move(3, 0);
 	ASSERT_EQ(expected, actual);
 	ASSERT_EQ(2, testObject.GetTimeInJail());
 	
-	testObject.Move(3);
+	testObject.Move(3, 0);
 	expected = 13;
 	actual = testObject.GetPosition();
 	ASSERT_EQ(expected, actual);
@@ -90,7 +94,7 @@ TEST(PROPERTYTESTS, TestGetCurrentRent) {
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
 	};
-	Property testObject(50, priceArray, "Oriental Ave");
+	Property testObject(50, priceArray, "Oriental Ave", 200);
 	ASSERT_EQ(priceArray[0], testObject.GetCurrentRent());
 	testObject.SetMonopolyStatus(true);
 	ASSERT_EQ(priceArray[0] * 2, testObject.GetCurrentRent());
@@ -100,7 +104,7 @@ TEST(PROPERTYTESTS, TestHasHotel) {
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
 	};
-	Property testObject(50, priceArray, "Oriental Ave");
+	Property testObject(50, priceArray, "Oriental Ave", 200);
 	testObject.SetMonopolyStatus(true);
 	
 	for (int i = 0; i < 5; i++)
@@ -116,7 +120,7 @@ TEST(PROPERTYTESTS, TestOnlyFiveHouses)
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
 	};
-	Property testObject(50, priceArray, "Oriental Ave");
+	Property testObject(50, priceArray, "Oriental Ave", 200);
 	testObject.SetMonopolyStatus(true);
 
 	try {
@@ -142,7 +146,7 @@ TEST(PROPERTYTESTS, TestNoHousesToSell)
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
 	};
-	Property testObject(50, priceArray, "Oriental Ave");
+	Property testObject(50, priceArray, "Oriental Ave", 200);
 
 	try {
 		testObject.SellHouse();
@@ -162,7 +166,7 @@ TEST(PROPERTYTESTS, TestBuildIfInMonopoly)
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
 	};
-	Property testObject(50, priceArray, "Oriental Ave");
+	Property testObject(50, priceArray, "Oriental Ave", 200);
 
 	try {
 		testObject.BuildHouse();
