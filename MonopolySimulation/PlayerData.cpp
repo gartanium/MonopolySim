@@ -44,7 +44,7 @@ bool PlayerData::IsBankrupt()
 */
 void PlayerData::setInJailStatus(bool isInJail)
 {
-	if (IsInJail)
+	if (isInJail)
 	{
 		this->isInJail = isInJail;
 		position = 10;

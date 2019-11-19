@@ -1,2 +1,1 @@
-﻿MonopolySimulation.lib(DiceHandler.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  UnitTests.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\UnitTests.exe
+﻿  UnitTests.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\UnitTests.exe

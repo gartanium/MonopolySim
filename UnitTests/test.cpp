@@ -4,6 +4,7 @@
 #include "../MonopolySimulation/Player.h"
 #include "../MonopolySimulation/Property.h"
 #include "test.h"
+#include "..//MonopolySimulation/Game.h"
 #include "../MonopolySimulation/GameData.h"
 
 TEST(GAMETESTS, TestRollDie) {
@@ -33,6 +34,27 @@ TEST(GAMETESTS, TestDoubles) {
 	ASSERT_FALSE(testObj.GetIsDouble());
 	result = testObj.RollDice();
 	ASSERT_TRUE(testObj.GetIsDouble());
+
+}
+
+TEST(GAMETESTS, TestPayingRent) {
+	Game testGame(2);
+	Player testPlayer;
+	testGame.players.push_back(testPlayer);
+
+	int priceArray[6] = {
+		6, 30, 90, 270, 400, 550
+	};
+	Property testObject(50, priceArray, "Oriental Ave", 200);
+	testGame.Deeds.push_back(testObject);
+	testGame.Deeds[0].setOwner(1);
+	ASSERT_EQ(200, testGame.players[0].getCash());
+	ASSERT_EQ(200, testGame.players[1].getCash());
+	testGame.players[0].Move(testObject.GetPosition(), false);
+	testGame.HandleMovementResult();
+	ASSERT_EQ(206, testGame.players[1].getCash());
+	ASSERT_EQ(194, testGame.players[0].getCash());
+	
 
 }
 

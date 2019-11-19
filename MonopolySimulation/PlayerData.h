@@ -24,7 +24,7 @@ class PlayerData
 		int GetCash() { return cash; };
 		int GetAssets() { return assets; };
 
-		void SpendCash(int value) { cash - value; };
+		void SpendCash(int value) { cash -= value; };
 		void ReceiveCash(int value) { cash += value; };
 
 		// these two are related to buying property and houses

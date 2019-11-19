@@ -6,11 +6,14 @@
 	subtracting the cost from cash
 	updating assets
 	and receive property
+
+	can probably be modified by adding an int in the call to allow use for trading
 */
-void Player::ReceiveProperty(Property property)
+void Player::ReceiveProperty(Property &property, int playerTurnIndex)
 {
 	playerData.SpendCash(property.GetCost());
 	playerData.updateAssets(property.GetMorgagePrice());
+	property.setOwner(playerTurnIndex);
 
 }
 
@@ -52,6 +55,16 @@ void Player::PayBail(int bail)
 	playerData.SpendCash(bail);
 	playerData.setInJailStatus(false);
 	playerData.setJailTime(0);
+}
+
+void Player::payRent(Property property)
+{
+	playerData.SpendCash(property.GetCurrentRent());
+}
+
+void Player::receiveRent(Property property)
+{
+	playerData.ReceiveCash(property.GetCurrentRent());
 }
 
 

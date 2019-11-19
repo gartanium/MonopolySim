@@ -1,8 +1,2 @@
-﻿  Game.cpp
-C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\DiceHandler.h(8,29): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-  Player.cpp
-C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\PlayerData.h(27,36): warning C4552:  '-': result of expression not used
-  Property.cpp
-  Generating Code...
-C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\PlayerData.h(27,36): warning C4552:  '-': result of expression not used
+﻿  Property.cpp
   MonopolySimulation.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\MonopolySimulation.lib

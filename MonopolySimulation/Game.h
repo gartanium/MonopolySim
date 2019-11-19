@@ -1,4 +1,5 @@
 #pragma once
+#include <iostream>
 #include "DiceHandler.h"
 #include <vector>
 #include "Player.h"
@@ -10,7 +11,7 @@ class Game
 		void Update();
 		bool End() { return endGame; }
 
-	private:
+	//private:
 		void Build();
 		void Trade();
 		void Move();
@@ -21,6 +22,9 @@ class Game
 		DiceHandler diceHandler;
 		bool endGame;
 		std::vector<Player> players;
+
+		// this is the current player
 		int playerTurnIndex;
+		std::vector<Property>Deeds;
 };
 

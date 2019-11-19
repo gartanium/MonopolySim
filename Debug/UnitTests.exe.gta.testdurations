@@ -13,5 +13,6 @@
     <TestDuration Test="PROPERTYTESTS.TestBuildIfInMonopoly" Duration="1" />
     <TestDuration Test="GAMEDATATESTS.TestPlayerPositions" Duration="1" />
     <TestDuration Test="PLAYERDATATESTS.Test3TurnsInJail" Duration="1" />
+    <TestDuration Test="GAMETESTS.TestPayingRent" Duration="1" />
   </TestDurations>
 </GtaTestDurations>
