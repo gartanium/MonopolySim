@@ -1,2 +1,5 @@
-﻿  Property.cpp
+﻿  Game.cpp
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\DiceHandler.h(8,29): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(16,24): warning C4552:  '%': result of expression not used
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(66,77): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
   MonopolySimulation.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\MonopolySimulation.lib

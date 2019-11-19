@@ -19,9 +19,16 @@ class Player
 		void PayBail(int bail);
 		void payRent(Property property);
 		void receiveRent(Property property);
+		void payTaxes(int taxes);
+		void Die();
+		void Execute(Player deadPlayer);
+
+
 		int GetPosition() { return playerData.GetPosition(); };
 		int GetTimeInJail() { return playerData.getJailTime(); };
 		int getCash() { return playerData.GetCash(); };
+		int getAssets() { return playerData.GetAssets(); };
+		
 
 	private:
 		PlayerData playerData;

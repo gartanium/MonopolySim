@@ -27,10 +27,14 @@ class PlayerData
 		void SpendCash(int value) { cash -= value; };
 		void ReceiveCash(int value) { cash += value; };
 
-		// these two are related to buying property and houses
-		// the assets gained would be the price of mortgaging or selling houses
-		// the assets spent are what they player spent to buy a property or house
-		void updateAssets(int value) { assets = (cash + value); };
+		
+		void updateLiquidAssets(int value) { liquidAssets += value; };
+		int getLiquidAssets() { return liquidAssets; };
+
+
+		//needs to be called everytime money is spent, gained or property
+		//is bought or mortgaged as well as houses bought or sold
+		void updateAssets() { assets = (cash + liquidAssets); };
 		
 
 
@@ -58,8 +62,10 @@ class PlayerData
 	private:
 		int position = 0;
 		int cash = 200;
-		int assets = 0;
+		int liquidAssets = 0;
+		int assets = 200;
 		bool isInJail = false;
 		int jailTime = 0;
+		
 };
 

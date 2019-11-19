@@ -4,7 +4,7 @@
 class Property : public Tile
 {
 	public:
-		Property(int morgagePrice,  int housePriceArray[6], std::string title, int purchasePrice);
+		Property(int morgagePrice,  int housePriceArray[6], std::string title, int purchasePrice, int position);
 		Property(std::string data[12]);
 		int GetHouseCount() { return houseCount; }
 		int GetHousePrice() { return housePrice; }
@@ -21,6 +21,7 @@ class Property : public Tile
 		void BuildHouse();
 		void SellHouse();
 		bool HasHotel() { return houseCount == 5; }
+		bool CanBuild();
 		void setOwner(int owner) { this->playerOwnerNumber = owner; };
 
 
@@ -35,6 +36,7 @@ class Property : public Tile
 		int cost;
 		bool isOwned = false;
 		int position;
+		
 
 		int playerOwnerNumber = -1;
 };

@@ -18,6 +18,7 @@ class Game
 		void HandleMovementResult();
 		void Sell();
 		void NextPlayer() { playerTurnIndex++; };
+		void executePlayer(int owner);
 		
 		DiceHandler diceHandler;
 		bool endGame;

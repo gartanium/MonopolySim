@@ -14,5 +14,8 @@
     <TestDuration Test="GAMEDATATESTS.TestPlayerPositions" Duration="1" />
     <TestDuration Test="PLAYERDATATESTS.Test3TurnsInJail" Duration="1" />
     <TestDuration Test="GAMETESTS.TestPayingRent" Duration="1" />
+    <TestDuration Test="PLAYERDATATESTS.PayTaxes" Duration="1" />
+    <TestDuration Test="GAMETESTS.TestPayingTaxes" Duration="1" />
+    <TestDuration Test="GAMETESTS.TestExecutePlayer" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

@@ -12,17 +12,20 @@
 void Player::ReceiveProperty(Property &property, int playerTurnIndex)
 {
 	playerData.SpendCash(property.GetCost());
-	playerData.updateAssets(property.GetMorgagePrice());
+	playerData.updateLiquidAssets(property.GetMorgagePrice());
 	property.setOwner(playerTurnIndex);
+	playerData.updateAssets();
 
 }
 
 /*
 	sets the players status to in jail
+	and moves them to the jail location
 */
 void Player::sendToJail()
 {
 	playerData.setInJailStatus(true);
+	playerData.SetPosition(10);
 }
 /*
 	adds time to the player being in jail if the plyaer is already in jail
@@ -40,6 +43,7 @@ void Player::AddTimeInJail(bool doubles)
 		if (jailTime == 3)
 		{
 			PayBail(50);
+			playerData.updateAssets();
 		}
 
 	}
@@ -60,12 +64,40 @@ void Player::PayBail(int bail)
 void Player::payRent(Property property)
 {
 	playerData.SpendCash(property.GetCurrentRent());
+	playerData.updateAssets();
 }
 
 void Player::receiveRent(Property property)
 {
 	playerData.ReceiveCash(property.GetCurrentRent());
+	playerData.updateAssets();
 }
+
+void Player::payTaxes(int taxes)
+{
+	 playerData.SpendCash(taxes);
+	 playerData.updateAssets();
+}
+
+void Player::Die()
+{
+	playerData.SpendCash((playerData.GetCash()+ 3000));
+	playerData.updateLiquidAssets(-(playerData.getLiquidAssets()+ 1000));
+	playerData.updateAssets();
+
+}
+
+
+void Player::Execute(Player deadPlayer)
+{
+	int tempAssets = deadPlayer.getAssets();
+	int tempCash = deadPlayer.getCash();
+
+	this->playerData.ReceiveCash(tempCash);
+	this->playerData.updateLiquidAssets(deadPlayer.getAssets() - tempCash);
+	this->playerData.updateAssets();
+}
+
 
 
 /*

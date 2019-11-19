@@ -1,18 +1,18 @@
 #include "Property.h"
 
-Property::Property(int morgagePrice, int housePriceArray[6], std::string title, int purchasePrice)
+Property::Property(int morgagePrice, int housePriceArray[6], std::string title, int purchasePrice, int position)
 {
 	this->morgagePrice = morgagePrice;
 	this->inMonopoly = false;
 	this->houseCount = 0;
 
-	for (int i = 1; i < 6; i++) 
+	for (int i = 0; i < 6; i++) 
 	{
-		this->houseRents[i - 1] = housePriceArray[i - 1];
+		this->houseRents[i] = housePriceArray[i];
 	}
 	this->title = title;
 	this->cost = purchasePrice;
-	this->position = 6;
+	this->position = position;
 
 }
 
@@ -46,17 +46,14 @@ int Property::GetCurrentRent()
 
 void Property::BuildHouse()
 {
-	if (inMonopoly)
-	{
-		if (houseCount < 5)
-		{
+	if (CanBuild())
+	{	
 			houseCount++;
-		}
-		else
-			throw "ERROR: There are to many houses!";
 	}
 	else
-		throw "ERROR: Property not in a monopoly!";
+	{
+		throw "unable to build a house";
+	}
 }
 
 void Property::SellHouse()
@@ -67,4 +64,17 @@ void Property::SellHouse()
 	}
 	else
 		throw "ERROR: There are no houses to sell!";
+}
+
+bool Property::CanBuild()
+{
+	if (inMonopoly && houseCount != 5)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+	
 }
