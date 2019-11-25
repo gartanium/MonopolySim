@@ -11,6 +11,7 @@ class PlayerData
 		PlayerData() { position = 0; }
 		int GetPosition();
 		void SetPosition(int value) { position = value; };
+		void formatPosition() { position = position % 40; };
 
 		int * GetUnmorgaged();
 		int * GetMorgaged();
@@ -24,11 +25,11 @@ class PlayerData
 		int GetCash() { return cash; };
 		int GetAssets() { return assets; };
 
-		void SpendCash(int value) { cash -= value; };
-		void ReceiveCash(int value) { cash += value; };
+		void SpendCash(int value) { cash -= value; updateAssets(); };
+		void ReceiveCash(int value) { cash += value; updateAssets(); };
 
 		
-		void updateLiquidAssets(int value) { liquidAssets += value; };
+		void updateLiquidAssets(int value) { liquidAssets += value; updateAssets(); };
 		int getLiquidAssets() { return liquidAssets; };
 
 
@@ -51,6 +52,9 @@ class PlayerData
 		void setJailTime(int value) { jailTime = value; };
 		void setInJailStatus(bool isInJail);
 
+		void setGOOJF(bool value) { GOOJF = value; };
+		bool getGOOJF() { return GOOJF; };
+
 		//^^^ every function regarding jail
 
 
@@ -66,6 +70,7 @@ class PlayerData
 		int assets = 200;
 		bool isInJail = false;
 		int jailTime = 0;
+		bool GOOJF = false;
 		
 };
 

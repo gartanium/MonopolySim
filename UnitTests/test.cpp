@@ -41,6 +41,7 @@ TEST(GAMETESTS, TestPayingRent) {
 	Game testGame(2);
 	Player testPlayer;
 	testGame.players.push_back(testPlayer);
+	testGame.players.push_back(testPlayer);
 
 	int priceArray[6] = {
 		6, 30, 90, 270, 400, 550
@@ -51,7 +52,7 @@ TEST(GAMETESTS, TestPayingRent) {
 	ASSERT_EQ(200, testGame.players[0].getCash());
 	ASSERT_EQ(200, testGame.players[1].getCash());
 	testGame.players[0].Move(testObject.GetPosition(), false);
-	testGame.HandleMovementResult();
+	testGame.HandleMovementResult(1);
 	ASSERT_EQ(206, testGame.players[1].getCash());
 	ASSERT_EQ(194, testGame.players[0].getCash());
 	
@@ -63,7 +64,7 @@ TEST(GAMETESTS, TestPayingRent) {
 TEST(GAMETESTS, TestPayingTaxes) {
 	Game testGame(1);
 	testGame.players[0].Move(4, false);
-	testGame.HandleMovementResult();
+	testGame.HandleMovementResult(1);
 	ASSERT_EQ(180, testGame.players[0].getAssets());
 }
 
@@ -90,7 +91,8 @@ TEST(GAMETESTS, TestExecutePlayer) {
 	ASSERT_EQ(550, testObjectBaltic.GetCurrentRent());
 	
 	testGame.players[0].Move(20, false);
-	testGame.HandleMovementResult();
+	//testGame.HandleMovementResult(1);
+	testGame.executePlayer(1);
 
  	for (std::vector<Property>::iterator it = testGame.Deeds.begin(); it != testGame.Deeds.end(); ++it)
 	{

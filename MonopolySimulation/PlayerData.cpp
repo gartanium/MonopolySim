@@ -2,7 +2,7 @@
 
 int PlayerData::GetPosition()
 {
-	return position % 40;
+	return position;
 }
 
 int* PlayerData::GetUnmorgaged()

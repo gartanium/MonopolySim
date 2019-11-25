@@ -1,5 +1,13 @@
-﻿  Game.cpp
+﻿  Board.cpp
+  Game.cpp
 C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\DiceHandler.h(8,29): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(16,24): warning C4552:  '%': result of expression not used
-C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(66,77): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(5,12): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(42,24): warning C4552:  '%': result of expression not used
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(94,77): warning C4244:  'argument': conversion from 'double' to 'int', possible loss of data
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(316,21): warning C4018:  '<': signed/unsigned mismatch
+  Player.cpp
+  PlayerData.cpp
+  Property.cpp
+  Generating Code...
+C:\Users\Ryan\Source\Repos\MonopolySim\MonopolySimulation\Game.cpp(389,21): warning C4018:  '<': signed/unsigned mismatch
   MonopolySimulation.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\MonopolySimulation.lib

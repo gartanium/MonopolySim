@@ -17,12 +17,20 @@ class Property : public Tile
 		std::string GetColor() { return color; }
 		std::string GetTitle() { return title; }
 
+
+		void setOwner(int owner) { this->playerOwnerNumber = owner; };
 		void SetMonopolyStatus(bool value) { inMonopoly = value; }
 		void BuildHouse();
 		void SellHouse();
+		void setMortgaged(bool value) { mortgaged = value; };
+		
+
 		bool HasHotel() { return houseCount == 5; }
 		bool CanBuild();
-		void setOwner(int owner) { this->playerOwnerNumber = owner; };
+		bool Mortgaged() { return mortgaged; };
+
+
+		
 
 
 	private:
@@ -34,6 +42,7 @@ class Property : public Tile
 		std::string title;
 		bool inMonopoly;
 		int cost;
+		bool mortgaged = false;
 		bool isOwned = false;
 		int position;
 		
