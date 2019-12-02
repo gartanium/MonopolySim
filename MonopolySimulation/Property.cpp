@@ -1,8 +1,8 @@
 #include "Property.h"
 
-Property::Property(int morgagePrice, int housePriceArray[6], std::string title, int purchasePrice, int position)
+Property::Property(int mortgagePrice, int housePriceArray[6], std::string title, int purchasePrice, int position)
 {
-	this->morgagePrice = morgagePrice;
+	this->mortgagePrice = mortgagePrice;
 	this->inMonopoly = false;
 	this->houseCount = 0;
 
@@ -22,7 +22,7 @@ Property::Property(std::string data[12])
 	this->color = data[1];
 	this->position = std::stoi(data[2]);
 	this->cost = std::stoi(data[3]);
-	this->morgagePrice = std::stoi(data[4]);
+	this->mortgagePrice = std::stoi(data[4]);
 	this->housePrice = std::stoi(data[5]);
 	for (int i = 0; i < 6; i++)
 	{
@@ -42,6 +42,19 @@ int Property::GetCurrentRent()
 	}
 	else
 		return houseRents[houseCount];
+}
+
+int Property::GetAssetValue()
+{
+	if (mortgaged)
+	{
+		return 0;
+	}
+	else
+	{
+		return (mortgagePrice + (houseCount * housePrice));
+	}
+	
 }
 
 void Property::BuildHouse()

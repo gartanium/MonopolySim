@@ -1,5 +1,1 @@
-﻿  test.cpp
-C:\Users\Ryan\source\repos\MonopolySim\MonopolySimulation\DiceHandler.h(8,29): warning C4244:  'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\Ryan\source\repos\MonopolySim\UnitTests\test.cpp(171,6): warning C4101:  'actual': unreferenced local variable
-MonopolySimulation.lib(DiceHandler.obj) : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
-  UnitTests.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\UnitTests.exe
+﻿  UnitTests.vcxproj -> C:\Users\Ryan\Source\Repos\MonopolySim\Debug\UnitTests.exe

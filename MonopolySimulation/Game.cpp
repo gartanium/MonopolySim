@@ -146,20 +146,27 @@ void Game::HandleMovementResult(int payMod)
 				 {
 					int owner = PropertyIt->getOwnerNumber();
 
+					
+					
+					//if the property is mortgaged
+					if (PropertyIt->Mortgaged())
+					{
+
+					}
 					// if a player has less assets than the rent make them go bankrupt
-					if (players[playerTurnIndex].getAssets() < (PropertyIt->GetCurrentRent() * payMod))
+					else if (players[playerTurnIndex].getAssets() < (PropertyIt->GetCurrentRent() * payMod))
 					{
 						//all the players property and money goes to the owner
 						executePlayer(owner);
 
 					}
-
 					// if the player has enough money on hand fork it over
 					else if (players[playerTurnIndex].getCash() > (PropertyIt->GetCurrentRent()* payMod))
 					{
 						players[owner].receiveRent(*PropertyIt, payMod);
 							players[playerTurnIndex].payRent(*PropertyIt, payMod);
 					}
+					
 					// if the player does not have enough cash on hand the player
 					// has to sell,mortgage things until they do
 					else

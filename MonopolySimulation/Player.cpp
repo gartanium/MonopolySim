@@ -12,7 +12,7 @@
 void Player::ReceiveProperty(Property &property, int playerTurnIndex)
 {
 	playerData.SpendCash(property.GetCost());
-	playerData.updateLiquidAssets(property.GetMorgagePrice());
+	playerData.updateLiquidAssets(property.GetAssetValue());
 	property.setOwner(playerTurnIndex);
 }
 
@@ -89,14 +89,37 @@ void Player::Execute(Player deadPlayer)
 	int tempCash = deadPlayer.getCash();
 
 	this->playerData.ReceiveCash(tempCash);
-	this->playerData.updateLiquidAssets(deadPlayer.getAssets() - tempCash);
+	this->playerData.updateLiquidAssets(tempAssets - tempCash);
 }
 
-void Player::mortgageProperty(Property property)
+void Player::mortgageProperty(Property &property)
 {
 	property.setMortgaged(true);
-	playerData.ReceiveCash(property.GetMorgagePrice());
+	playerData.ReceiveCash(property.GetMortgagePrice());
+	playerData.updateLiquidAssets(-(property.GetMortgagePrice()));
 }
+
+void Player::unmortgageProperty(Property& property)
+{
+	property.setMortgaged(false);
+	playerData.SpendCash(property.GetMortgagePrice());
+	playerData.updateLiquidAssets(property.GetMortgagePrice());
+}
+
+void Player::BuildHouse(Property& property)
+{
+	playerData.SpendCash(property.GetHousePrice());
+	property.BuildHouse();
+	playerData.updateLiquidAssets(property.GetHousePrice());
+}
+
+void Player::SellHouse(Property& property)
+{
+	playerData.ReceiveCash(property.GetHousePrice());
+	property.SellHouse();
+	playerData.updateLiquidAssets(-property.GetHousePrice());
+}
+
 
 
 

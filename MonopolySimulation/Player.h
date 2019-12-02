@@ -25,7 +25,6 @@ class Player
 		void receiveMoney(int value) { playerData.ReceiveCash(value); };
 		void spendMoney(int value) { playerData.SpendCash(value); };
 		void setGOOJF(bool value) { playerData.setGOOJF(value); };
-		void mortgageProperty(Property property);
 
 
 		int GetPosition() { return playerData.GetPosition(); };
@@ -33,6 +32,14 @@ class Player
 		int getCash() { return playerData.GetCash(); };
 		int getAssets() { return playerData.GetAssets(); };
 		bool getGOOJF() { return playerData.getGOOJF(); };
+
+		//player Actions
+		void mortgageProperty(Property &property);
+		void unmortgageProperty(Property& property);
+		void BuildHouse(Property &property);
+		void SellHouse(Property &property);
+
+		
 		
 
 	private:

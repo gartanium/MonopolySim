@@ -107,6 +107,25 @@ TEST(GAMETESTS, TestExecutePlayer) {
 
 }
 
+TEST(GAMETESTS, TestLandingOnMortgagedProperty) {
+	Game TestGame(1);
+	Player TestPlayer;
+	TestGame.players.push_back(TestPlayer);
+	int priceArray[6] = {
+		6, 30, 90, 270, 400, 550
+	};
+	Property testObjectBaltic(50, priceArray, "Baltic Ave", 200, 20);
+	TestGame.Deeds.push_back(testObjectBaltic);
+	TestGame.Deeds[0].setOwner(1);
+	TestGame.players[1].mortgageProperty(TestGame.Deeds[0]);
+	ASSERT_EQ(TestGame.players[1].getCash(), 250);
+	ASSERT_EQ(TestGame.Deeds[0].Mortgaged(), true);
+	TestGame.players[0].Move(20, false);
+	TestGame.HandleMovementResult(1);
+	ASSERT_EQ(TestGame.players[0].getCash(), 200);
+
+}
+
 // Player Tests
 
 TEST(PLAYERDATATESTS, TestMovePlayer) {

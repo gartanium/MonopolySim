@@ -17,5 +17,7 @@
     <TestDuration Test="PLAYERDATATESTS.PayTaxes" Duration="1" />
     <TestDuration Test="GAMETESTS.TestPayingTaxes" Duration="1" />
     <TestDuration Test="GAMETESTS.TestExecutePlayer" Duration="1" />
+    <TestDuration Test="GAMEDATATESTS.TestLandingOnMortgagedProperty" Duration="1" />
+    <TestDuration Test="GAMETESTS.TestLandingOnMortgagedProperty" Duration="1" />
   </TestDurations>
 </GtaTestDurations>

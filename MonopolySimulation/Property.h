@@ -8,11 +8,12 @@ class Property : public Tile
 		Property(std::string data[12]);
 		int GetHouseCount() { return houseCount; }
 		int GetHousePrice() { return housePrice; }
-		int GetMorgagePrice() { return morgagePrice; }
+		int GetMortgagePrice() { return mortgagePrice; }
 		int GetCurrentRent();
 		int GetCost() { return cost; };
 		int GetPosition() { return position; };
 		int getOwnerNumber() { return playerOwnerNumber; };
+		int GetAssetValue();
 
 		std::string GetColor() { return color; }
 		std::string GetTitle() { return title; }
@@ -36,7 +37,7 @@ class Property : public Tile
 	private:
 		int houseCount;
 		int housePrice;
-		int morgagePrice;
+		int mortgagePrice;
 		int houseRents[6];
 		std::string color;
 		std::string title;

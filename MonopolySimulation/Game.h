@@ -22,6 +22,7 @@ class Game
 		void Sell();
 		void NextPlayer() { playerTurnIndex++; };
 		void executePlayer(int owner);
+		
 
 		void Chance(int chanceCard);
 		void CommunityChest(int communityC);
